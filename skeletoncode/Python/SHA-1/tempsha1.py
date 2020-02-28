@@ -16,19 +16,14 @@ except:
     print("Cannot open source file!")
     sys.exit()
 
-beforeEncrypt = time.time()
+beforeDigest = time.time()
 result = hashlib.sha1(plain_text.encode()) 
-afterEncrypt = time.time()
-eTime = afterEncrypt - beforeEncrypt
-print("The encryption time is " + str(eTime))
+afterDigest = time.time()
+eTime = afterDigest - beforeDigest
+print("The digest generation time is " + str(eTime))
   
 # printing the equivalent hexadecimal value. 
 print("The hexadecimal equivalent of SHA1 digest is : ")
-beforeDecrypt = time.time() 
 print(result.hexdigest())
-afterDecrypt = time.time()
-dTime = afterDecrypt - beforeDecrypt
-print("The decryption time is " + str(dTime))
 
-print("The total time is " + str(eTime + dTime))
 print '='*100 
