@@ -26,7 +26,10 @@ except:
     sys.exit()
 
 beforeEncrypt = time.time()
+while len(text) % 8 != 0:
+    text += '\x00'
 cypher = des1.encrypt(text)
+cypher = des2.encrypt(text)
 afterEncrypt = time.time()
 eTime = afterEncrypt - beforeEncrypt
 print("The encryption time is " + str(eTime))
